@@ -25,7 +25,7 @@ router.put('/', (req, res) => {
   var requestBody = JSON.parse(Object.keys(req.body)[0])
   var parentres = res
   req.db.collection("Switch").updateOne({_id: { $eq: ObjectID(requestBody._id)}}, {$set :  requestBody.values}, (err, res) => {
-    if (err) throw err;
+    if (err) throw err; 
     console.log(res.result.nModified + " record updated");
     parentres.send('')
   });

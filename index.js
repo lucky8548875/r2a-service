@@ -8,6 +8,8 @@ const app = express()
 const auth = require('./services/auth');
 const users = require('./services/users');
 const switches = require('./services/switch');
+const logs = require('./services/logs');
+const admin_logs = require('./services/admin_logs');
 
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -33,6 +35,8 @@ app.use(function(req,res,next){
 app.use('/api/users',users)
 app.use('/api/switch',switches)
 app.use('/api/auth',auth)
+app.use('/api/logs',logs)
+app.use('/api/admin_logs',admin_logs)
 
 
 
