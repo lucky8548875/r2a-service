@@ -37,7 +37,7 @@ app.use('/api/switch',switches)
 app.use('/api/auth',auth)
 app.use('/api/logs',logs)
 app.use('/api/admin_logs',admin_logs)
-
+app.use(express.static('public'))
 
 
 app.listen(3000, ()=> {
